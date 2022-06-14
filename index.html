@@ -19,10 +19,11 @@
       <div class="row">
         <div class="col-1">
           <div class="row space-between">
-            <h1>Craving Creations</h1>
+            <h1 class="logo">Craving Creations</h1>
             <div class="search-container">
-              <form action="/search" method="get">
-                <input class="search expandright" id="searchright" type="search" name="search" placeholder="Search Craving Creations">
+              <!-- <form action="/search" method="get"> -->
+              <form class="first">
+                <input class="search expandright" id="searchright" type="search" name="navSearch" placeholder="Search Craving Creations">
                 <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
               </form>
             </div>
@@ -37,7 +38,8 @@
         <div class="col-1">
           <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
           <h1 class="hero-text align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
-          <form class="search-box search-box-layout">
+          <!-- <form class="search-box search-box-layout" action="/search" method="get"> -->
+          <form class="search-box search-box-layout" data-view="second">
             <input type="text" placeholder="Search Craving Creations" name="search" class="search-input">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>

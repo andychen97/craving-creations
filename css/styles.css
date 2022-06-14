@@ -1,6 +1,7 @@
-h1 {
-  margin-left: 10px;
+.logo {
   font-family: Handlee, cursive;
+  font-size: 40px;
+  margin: 5px 10px;
 }
 
 .grey-background {
@@ -11,95 +12,13 @@ h1 {
   justify-content: space-between;
 }
 
-.flex-end {
-  justify-content: flex-end;
-}
-
-.search-icon {
-  max-width: 24px;
-  max-height: 24px;
-  margin: 15px 5px 0;
-}
-
-.header-font {
-  color: #808080;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.hero-image {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-}
-
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.hero-text {
-  position: absolute;
-  color: black;
-  top: 40px;
-  left: 0;
-  right: 0;
-  line-height: 80px;
-}
-
-.white-text {
-  color: white;
-}
-
-form.search-box input {
-  padding: 10px;
-  font-size: 17px;
-  background: white;
-  border: 0;
-  outline: none;
-}
-
-form.search-box button {
-  width: 50px;
-  padding: 10px;
-  color: rgb(0, 0, 0);
-  font-size: 17px;
-  border: 0;
-  background-color: white;
-  border-left: none;
-  cursor: pointer;
-}
-
-.search-box {
-  position: absolute;
-  width: 100%;
-  background: white;
-  display: flex;
-  align-items: center;
-  border-radius: 40px;
-  padding: 0 20px;
-  bottom: 175px;
-}
-
 .search-container {
   position: relative;
   display: inline-block;
-  top: 20px;
-  bottom: 20px;
+  top: 10px;
+  bottom: 10px;
   height: 50px;
   width: 50px;
-  margin-right: 20px;
 }
 
 .search {
@@ -147,4 +66,70 @@ form.search-box button {
   width: 300px;
   border: 1px black solid;
   padding-left: 10px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.hero-text {
+  font-family: Handlee, cursive;
+  position: absolute;
+  color: black;
+  top: 40px;
+  left: 0;
+  right: 0;
+  line-height: 80px;
+}
+
+.white-text {
+  color: white;
+}
+
+form.search-box input {
+  padding: 10px;
+  font-size: 17px;
+  background: white;
+  border: 0;
+  outline: none;
+}
+
+form.search-box button {
+  width: 50px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  border: 0;
+  background-color: white;
+  border-left: none;
+  cursor: pointer;
+}
+
+.search-box {
+  position: absolute;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  padding: 0 20px;
+  bottom: 175px;
 }
