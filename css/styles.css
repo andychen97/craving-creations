@@ -1,0 +1,93 @@
+h1 {
+  margin-left: 10px;
+  font-family: Handlee, cursive;
+}
+
+.grey-background {
+  background-color: #f4f1f1;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.search-icon {
+  max-width: 24px;
+  max-height: 24px;
+  margin: 15px 5px 0;
+}
+
+.header-font {
+  color: #808080;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.hero-text {
+  position: absolute;
+  color: black;
+  top: 40px;
+  left: 0;
+  right: 0;
+  line-height: 80px;
+}
+
+.white-text {
+  color: white;
+}
+
+form.search-box input {
+  padding: 10px;
+  font-size: 17px;
+  background: white;
+  border: 0;
+  outline: none;
+}
+
+form.search-box button {
+  width: 50px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  border: 0;
+  background-color: white;
+  border-left: none;
+  cursor: pointer;
+}
+
+.search-box {
+  position: absolute;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  padding: 0 20px;
+  bottom: 175px;
+}
