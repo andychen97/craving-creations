@@ -17,12 +17,15 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-2">
-          <h1>Craving Creations</h1>
-        </div>
-        <div class="col-2">
-          <div class="row flex-end">
-            <h3 class="header-font">SEARCH<span><img src="images/search-icon.png" alt="search-icon" class="search-icon"></span></h3>
+        <div class="col-1">
+          <div class="row space-between">
+            <h1>Craving Creations</h1>
+            <div class="search-container">
+              <form action="/search" method="get">
+                <input class="search expandright" id="searchright" type="search" name="search" placeholder="Search Craving Creations">
+                <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+              </form>
+            </div>
           </div>
         </div>
       </div>
