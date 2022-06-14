@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1 {
+  flex-basis: 100%;
+}
+
+.col-2 {
+  flex-basis: 50%;
+}
+
+.hero-font {
+  font-size: 60px;
+}
+
+.search-box-layout {
+  max-width: 80%;
+  left: 10%;
+  right: 10%;
+}
+
+.search-input {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-font {
+    font-size: 80px;
+  }
+
+  .search-box-layout {
+    max-width: 60%;
+    left: 20%;
+    right: 20%;
+  }
+
+  .search-input {
+    width: 600px;
+  }
+}

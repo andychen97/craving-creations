@@ -8,11 +8,46 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-1">
+          <div class="row space-between">
+            <h1 class="logo">Craving Creations</h1>
+            <div class="search-container">
+              <form name="navSearch">
+                <input class="search expandright" id="searchright" type="search" name="navInput" placeholder="Search Craving Creations">
+                <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
+    <div class="container grey-background">
+      <div class="row relative" data-view="home-page">
+        <div class="col-1">
+          <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
+          <h1 class="hero-text align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
+          <form class="search-box search-box-layout" name="heroSearch">
+            <input type="text" placeholder="Search Craving Creations" name="heroInput" class="search-input">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+        </div>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
