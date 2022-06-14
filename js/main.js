@@ -24,15 +24,18 @@ function apiSearch(customerInput) {
   var data = null;
 
   var xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
   xhr.withCredentials = false;
 
   var originalUrl = 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=8&q=';
   originalUrl += customerInput;
 
   xhr.addEventListener('load', function () {
-    var jsonResponse = JSON.parse(this.responseText);
-    var results = jsonResponse.results;
-    parseResponse(results);
+    if (xhr.status >= 200 && xhr.status < 300) {
+      console.log('xhr: ', xhr);
+      var results = xhr.response.results;
+      parseResponse(results);
+    }
   });
 
   xhr.open('GET', originalUrl);
