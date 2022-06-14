@@ -31,11 +31,8 @@ function apiSearch(customerInput) {
   originalUrl += customerInput;
 
   xhr.addEventListener('load', function () {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      console.log('xhr: ', xhr);
-      var results = xhr.response.results;
-      parseResponse(results);
-    }
+    var results = xhr.response.results;
+    parseResponse(results);
   });
 
   xhr.open('GET', originalUrl);
