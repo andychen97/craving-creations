@@ -13,6 +13,7 @@
   flex-basis: 100%;
 }
 
+.col-4,
 .col-2 {
   flex-basis: 50%;
 }
@@ -36,6 +37,10 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+  }
+
+  .col-4 {
+    flex-basis: 25%;
   }
 
   .hero-font {
