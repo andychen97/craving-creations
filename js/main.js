@@ -3,8 +3,10 @@ var $navSearch = document.querySelector('form[name="navSearch"]');
 var $search = document.querySelector('form[name="heroSearch"]');
 var $navCustomerInput = document.querySelector('input[name="navInput"]');
 var $regularCustomerInput = document.querySelector('input[name="heroInput"]');
-var $ul = document.querySelector('ul');
+var $ulSearchResults = document.querySelector('ul[id="ul-search-result"]');
 var $h4Results = document.querySelector('h4[id="results"]');
+var $homePage = document.querySelector('div[data-view="home-page"]');
+var $singeRecipePage = document.querySelector('div[data-view="recipe-page"]');
 
 $navSearch.addEventListener('submit', searchCallback);
 $search.addEventListener('submit', searchCallback);
@@ -23,6 +25,8 @@ function searchCallback(event) {
   $navSearch.reset();
   $search.reset();
   $h4Results.className = '';
+  data.view = 'home-page';
+  viewSwap();
 }
 
 function apiSearch(customerInput) {
@@ -51,6 +55,7 @@ function parseResponse(apiResponse) {
   for (let i = 0; i < apiResponse.length; i++) {
     if (!apiResponse[i].recipes) {
       var recipe = apiResponse[i];
+      // console.log(recipe);
       var name = recipe.name;
       var description = recipe.description;
       var recipeImage = recipe.thumbnail_url;
@@ -65,7 +70,7 @@ function parseResponse(apiResponse) {
         tempEntryId: data.tempNextEntryId++
       };
       data.tempEntries.unshift(singleRecipe);
-      $ul.prepend(createCards(data.tempEntries[0]));
+      $ulSearchResults.prepend(createCards(data.tempEntries[0]));
     } else {
       parseResponse(apiResponse[i].recipes);
     }
@@ -77,6 +82,7 @@ var matchCount = 0;
 
 function createCards(entries) {
   var $li = document.createElement('li');
+  $li.className = 'li-inline-block';
   var $divCol = document.createElement('div');
   $divCol.className = 'col-4';
   $li.appendChild($divCol);
@@ -93,14 +99,30 @@ function createCards(entries) {
   $divCard.appendChild($h3Title);
   matchCount++;
   $resultcount.textContent = matchCount;
+  $li.addEventListener('click', singleRecipeInstruction);
   return $li;
 }
 
 function resetSearch() {
   matchCount = 0;
   data.tempEntries = [];
-  var $createdLi = document.querySelectorAll('li');
+  var $createdLi = document.querySelectorAll('li.li-inline-block');
   for (let i = 0; i < $createdLi.length; i++) {
-    $ul.removeChild($createdLi[i]);
+    $ulSearchResults.removeChild($createdLi[i]);
+  }
+}
+
+function singleRecipeInstruction(event) {
+  data.view = 'single-recipe';
+  viewSwap();
+}
+
+function viewSwap() {
+  if (data.view === 'home-page') {
+    $homePage.classList.remove('hidden');
+    $singeRecipePage.classList.add('hidden');
+  } else if (data.view === 'single-recipe') {
+    $homePage.classList.add('hidden');
+    $singeRecipePage.classList.remove('hidden');
   }
 }

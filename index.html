@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -24,7 +26,8 @@
             <h1 class="logo">Craving Creations</h1>
             <div class="search-container">
               <form name="navSearch">
-                <input class="search expandright" id="searchright" type="search" name="navInput" placeholder="Search Craving Creations">
+                <input class="search expandright" id="searchright" type="search" name="navInput"
+                  placeholder="Search Craving Creations">
                 <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
               </form>
             </div>
@@ -35,7 +38,7 @@
   </header>
   <main>
     <div class="container">
-      <div class="row relative" data-view="home-page">
+      <div class="row relative hidden" data-view="home-page">
         <div class="col-1">
           <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
           <h1 class="hero-text text-align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
@@ -48,13 +51,110 @@
       <div class="row">
         <div class="col-1">
           <h4 id="results" class="hidden"><span id="result-count"></span> matched results</h4>
-          <ul class="row">
+          <ul class="row ul-search-result" id="ul-search-result">
           </ul>
         </div>
+      </div>
+      <div class="row style-ingredient-page" data-view="recipe-page">
+        <div class="col-1">
+          <!-- <div class="grey-line-bottom"> -->
+          <h2 class="recipe-title">Chocolate Cherry Cake</h2>
+          <p class="margin-30px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-1">
+          <img src="/images/cake/cake1.jpeg" class="image-ingredient-page">
+        </div>
+        <div class="col-1">
+          <h4 class="ingredient-title">INGREDIENTS</h4>
+        </div>
+        <div>
+          <ul id="ingredients-list">
+            <li>2 Cups sugar</li>
+            <li>1 - 3/4 cups all-purpose flour</li>
+            <li>3/4 cup cocoa powder</li>
+            <li>1 - 1/2 tsps baking powder</li>
+            <li>1 - 1/2 tsps baking soda</li>
+            <li>1 tsp salt</li>
+            <li>2 Cups sugar</li>
+            <li>1 - 3/4 cups all-purpose flour</li>
+            <li>3/4 cup cocoa powder</li>
+            <li>1 - 1/2 tsps baking powder</li>
+            <li>1 - 1/2 tsps baking soda</li>
+            <li>1 tsp salt</li>
+          </ul>
+        </div>
+        <div class="col-1">
+          <h4 class="recipe-title">INSTRUCTIONS</h4>
+          <ol class="instructions-list" id="instructions-list">
+            <li>Preheat oven to 350 degrees Fahrenheit. Lightly butter three 9-inch cake rounds. Dust with flour or
+              cocoa powder
+              and tap
+              out the excess. Alternatively, you can lightly grease the pans and line with parchment paper.</li>
+            <li>In a large mixing bowl, mix together flour, sugar, cocoa, baking soda, baking powder, and salt in a
+              stand mixer
+              using a
+              low speed until combined.</li>
+            <li>Add eggs, buttermilk, warm water, oil, and vanilla. Beat on a low speed until smooth. This should take
+              just a
+              couple of
+              minutes. Be sure to scrape the sides and bottom of the bowl so that everything gets mixed in.</li>
+            <li>Divide batter evenly amongst the three prepared pans, about 3 cups of batter per pan. Tap the cake pans
+              gently on
+              the
+              counter to allow any bubbles to rise to the top and escape.</li>
+            <li>Bake for 30-35 minutes in a 350 degree oven until a toothpick inserted into the center comes out clean.
+            </li>
+            <li>Cool on wire racks for 15 minutes and then remove the cakes from the pan and place on the wire rack to
+              cool
+              completely.</li>
+            <li>Top with cherries and chocolate syrup!</li>
+          </ol>
+        </div>
+        <!-- <div class="col-4">
+          <h4 class="ingredient-title">INGREDIENTS</h4>
+          <ul id="ingredients-list">
+            <li>2 Cups sugar</li>
+            <li>1 - 3/4 cups all-purpose flour</li>
+            <li>3/4 cup cocoa powder</li>
+            <li>1 - 1/2 tsps baking powder</li>
+            <li>1 - 1/2 tsps baking soda</li>
+            <li>1 tsp salt</li>
+            <li>2 Cups sugar</li>
+            <li>1 - 3/4 cups all-purpose flour</li>
+            <li>3/4 cup cocoa powder</li>
+            <li>1 - 1/2 tsps baking powder</li>
+            <li>1 - 1/2 tsps baking soda</li>
+            <li>1 tsp salt</li>
+          </ul>
+        </div>
+        <div class="col-3-4 grey-line-left">
+          <img src="/images/cake/cake1.jpeg" class="image-ingredient-page">
+          <h4 class="recipe-title">INSTRUCTIONS</h4>
+          <ol class="instructions-list" id="instructions-list">
+            <li>Preheat oven to 350 degrees Fahrenheit. Lightly butter three 9-inch cake rounds. Dust with flour or cocoa powder and tap
+            out the excess. Alternatively, you can lightly grease the pans and line with parchment paper.</li>
+            <li>In a large mixing bowl, mix together flour, sugar, cocoa, baking soda, baking powder, and salt in a stand mixer using a
+            low speed until combined.</li>
+            <li>Add eggs, buttermilk, warm water, oil, and vanilla. Beat on a low speed until smooth. This should take just a couple of
+            minutes. Be sure to scrape the sides and bottom of the bowl so that everything gets mixed in.</li>
+            <li>Divide batter evenly amongst the three prepared pans, about 3 cups of batter per pan. Tap the cake pans gently on the
+            counter to allow any bubbles to rise to the top and escape.</li>
+            <li>Bake for 30-35 minutes in a 350 degree oven until a toothpick inserted into the center comes out clean.</li>
+            <li>Cool on wire racks for 15 minutes and then remove the cakes from the pan and place on the wire rack to cool completely.</li>
+            <li>Top with cherries and chocolate syrup!</li>
+          </ol>
+        </div> -->
       </div>
     </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

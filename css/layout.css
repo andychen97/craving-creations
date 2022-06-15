@@ -9,7 +9,8 @@
   flex-wrap: wrap;
 }
 
-.col-1 {
+.col-1,
+.col-3-4 {
   flex-basis: 100%;
 }
 
@@ -41,6 +42,10 @@
 
   .col-4 {
     flex-basis: 25%;
+  }
+
+  .col-3-4 {
+    flex-basis: 75%;
   }
 
   .hero-font {
