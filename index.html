@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -32,11 +34,11 @@
     </div>
   </header>
   <main>
-    <div class="container grey-background">
+    <div class="container">
       <div class="row relative" data-view="home-page">
         <div class="col-1">
           <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
-          <h1 class="hero-text align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
+          <h1 class="hero-text text-align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
           <form class="search-box search-box-layout" name="heroSearch">
             <input type="text" placeholder="Search Craving Creations" name="heroInput" class="search-input">
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -45,6 +47,9 @@
       </div>
       <div class="row">
         <div class="col-1">
+          <h4 id="results" class="hidden"><span id="result-count"></span> matched results</h4>
+          <ul class="row">
+          </ul>
         </div>
       </div>
     </div>
