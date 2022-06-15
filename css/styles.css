@@ -69,32 +69,16 @@ main {
   padding-left: 10px;
 }
 
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  justify-content: center;
+.text-align-center {
+  text-align: center;
 }
 
 .space-between {
   justify-content: space-between;
 }
 
-.space-around {
-  justify-content: space-around;
-}
-
-.align-bottom {
-  align-items: flex-end;
-}
-
 .relative {
   position: relative;
-}
-
-.absolute {
-  position: absolute;
 }
 
 .hero-image {
@@ -183,12 +167,4 @@ li {
   height: 200px;
   max-width: 200px;
   max-height: 200px;
-}
-
-.checked {
-  color: orange;
-}
-
-span.fa-star {
-  padding: 5px 2px;
 }

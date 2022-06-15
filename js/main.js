@@ -93,7 +93,6 @@ function createCards(entries) {
   $divCard.appendChild($h3Title);
   matchCount++;
   $resultcount.textContent = matchCount;
-
   return $li;
 }
 
