@@ -3,8 +3,7 @@
 }
 
 main {
-  /* background-color: #f5f5f5; */
-  background-color: #3a3a3a33;
+  background-color: #f5f5f5;
   font-family: Charter, Georgia, Times, serif;
   font-size: 1.1875rem;
   line-height: 1.6;
@@ -193,6 +192,7 @@ form.search-box button {
   width: 166px;
   border-top: 1px solid rgb(199 199 199);
   border-bottom: 1px solid rgb(199 199 199);
+  white-space: pre;
 }
 
 .serving-facts {
@@ -207,16 +207,21 @@ form.search-box button {
   margin-bottom: 20px;
 }
 
-.ingredient-title,
-.ingredient-list,
-.instructions-title {
-  margin: 0 20px;
+.ingredient-title {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .ingredient-list {
-  line-height: 1.5;
+  line-height: 1.3;
   list-style-type: none;
-  padding: 0;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.instructions-title {
+  margin: 0 20px;
+  padding-left: 0;
 }
 
 .instructions-list {

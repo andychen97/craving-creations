@@ -42,6 +42,14 @@
   margin: 0 20px;
 }
 
+.ingredient-title {
+  margin-left: 20px;
+}
+
+.ingredient-list {
+  margin-left: 40px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 100%;
@@ -82,5 +90,10 @@
   .image-ingredient-page {
     margin-left: 50px;
     margin-right: 50px;
+  }
+
+  .ingredient-list,
+  .ingredient-title {
+    margin-left: 0;
   }
 }
