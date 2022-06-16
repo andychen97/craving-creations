@@ -67,6 +67,12 @@ function parseResponse(apiResponse) {
         image: recipeImage,
         recipeIngredients,
         recipeInstructions,
+        calories: recipe.nutrition.calories,
+        carbs: recipe.nutrition.carbohydrates,
+        fats: recipe.nutrition.fat,
+        protein: recipe.nutrition.protein,
+        fiber: recipe.nutrition.fiber,
+        sugar: recipe.nutrition.sugar,
         tempEntryId: data.tempNextEntryId++
       };
       data.tempEntries.unshift(singleRecipe);
@@ -93,10 +99,10 @@ function createCards(entries) {
   $image.setAttribute('src', entries.image);
   $image.className = 'picture';
   $divCard.appendChild($image);
-  var $h3Title = document.createElement('h3');
-  $h3Title.className = 'card-title-text';
-  $h3Title.textContent = entries.name;
-  $divCard.appendChild($h3Title);
+  var $h5Title = document.createElement('h5');
+  $h5Title.className = 'card-title-text';
+  $h5Title.textContent = entries.name;
+  $divCard.appendChild($h5Title);
   matchCount++;
   $resultcount.textContent = matchCount;
   $li.addEventListener('click', singleRecipeInstruction);
@@ -113,8 +119,15 @@ function resetSearch() {
 }
 
 function singleRecipeInstruction(event) {
-  data.view = 'single-recipe';
+  data.view = 'recipe-page';
   viewSwap();
+  var $div = document.createElement('div');
+  $div.className = 'row';
+  var $divTitle = document.createElement('div');
+  $divTitle.className = 'col-1 margin-20px';
+  $div.appendChild($divTitle);
+  // var $h2Title = document.createElement('h2');
+  // $h2Title.textContent = data.tempEntries
 }
 
 function viewSwap() {
