@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -24,7 +26,8 @@
             <h1 class="logo">Craving Creations</h1>
             <div class="search-container">
               <form name="navSearch">
-                <input class="search expandright" id="searchright" type="search" name="navInput" placeholder="Search Craving Creations">
+                <input class="search expandright" id="searchright" type="search" name="navInput"
+                  placeholder="Search Craving Creations">
                 <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
               </form>
             </div>
@@ -35,23 +38,32 @@
   </header>
   <main>
     <div class="container">
-      <div class="row relative" data-view="home-page">
-        <div class="col-1">
-          <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
-          <h1 class="hero-text text-align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
-          <form class="search-box search-box-layout" name="heroSearch">
-            <input type="text" placeholder="Search Craving Creations" name="heroInput" class="search-input">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+
+
+      <div data-view="home-page" class="">
+        <div class="row relative">
+          <div class="col-1">
+            <img src="images/hero-image.jpeg" alt="hero-image" class="hero-image">
+            <h1 class="hero-text text-align-center white-text hero-font">Find Your<br>Perfect Recipe!</h1>
+            <form class="search-box search-box-layout" name="heroSearch">
+              <input type="text" placeholder="Search Craving Creations" name="heroInput" class="search-input">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-1">
+            <h4 id="results" class="hidden"><span id="result-count"></span> matched results</h4>
+            <ul class="row ul-search-result" id="ul-search-result">
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-1">
-          <h4 id="results" class="hidden"><span id="result-count"></span> matched results</h4>
-          <ul class="row">
-          </ul>
-        </div>
+
+
+      <div data-view="recipe-page" class="hidden">
       </div>
+
     </div>
   </main>
   <script src="js/data.js"></script>
