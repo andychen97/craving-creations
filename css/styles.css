@@ -13,6 +13,7 @@ main {
   font-family: Handlee, cursive;
   font-size: 40px;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .search-container {
