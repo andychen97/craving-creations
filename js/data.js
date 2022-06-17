@@ -2,5 +2,7 @@
 
 var data = {
   tempEntries: [],
-  tempNextEntryId: 1
+  tempNextEntryId: 1,
+  favorite: [],
+  nextEntryId: 1
 };

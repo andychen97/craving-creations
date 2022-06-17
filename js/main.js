@@ -14,11 +14,15 @@ var $resultcount = document.querySelector('span[id="result-count"]');
 // Pages of the Website
 var $homePage = document.querySelector('div[data-view="home-page"]');
 var $singleRecipePage = document.querySelector('div[data-view="recipe-page"]');
+var $resultPage = document.querySelector('div[data-view="results"]');
+var $favoritesPage = document.querySelector('div[data-view="favorites"]');
 var $logo = document.querySelector('h1.logo');
+var $favoritesIcon = document.querySelector('i.bookmark');
 
-$logo.addEventListener('click', logoClick);
 $navSearch.addEventListener('submit', searchCallback);
 $search.addEventListener('submit', searchCallback);
+$logo.addEventListener('click', logoClick);
+$favoritesIcon.addEventListener('click', favoritesClick);
 
 function searchCallback(event) {
   event.preventDefault();
@@ -34,7 +38,7 @@ function searchCallback(event) {
   $navSearch.reset();
   $search.reset();
   $h4Results.className = '';
-  data.view = 'home-page';
+  data.view = 'results';
   viewSwap();
 }
 
@@ -252,10 +256,21 @@ function viewSwap() {
   if (data.view === 'home-page') {
     $homePage.classList.remove('hidden');
     $singleRecipePage.classList.add('hidden');
-
+    $resultPage.classList.add('hidden');
+    $favoritesPage.classList.add('hidden');
+  } else if (data.view === 'results') {
+    $homePage.classList.remove('hidden');
+    $resultPage.classList.remove('hidden');
+    $singleRecipePage.classList.add('hidden');
+    $favoritesPage.classList.add('hidden');
   } else if (data.view === 'recipe-page') {
     $homePage.classList.add('hidden');
     $singleRecipePage.classList.remove('hidden');
+  } else if (data.view === 'favorites') {
+    $homePage.classList.remove('hidden');
+    $favoritesPage.classList.remove('hidden');
+    $singleRecipePage.classList.add('hidden');
+    $resultPage.classList.add('hidden');
   }
 }
 
@@ -264,4 +279,10 @@ function logoClick(event) {
   $h4Results.className = 'hidden';
   viewSwap();
   resetSearch();
+}
+
+function favoritesClick(event) {
+  data.view = 'favorites';
+  viewSwap();
+
 }
