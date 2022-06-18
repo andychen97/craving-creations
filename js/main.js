@@ -214,10 +214,26 @@ function GenerateSingleRecipe(entry) {
   var $divImageCol = document.createElement('div');
   $divImageCol.className = 'col-3-5';
   $divImageIngredient.appendChild($divImageCol);
+  var $divImageBox = document.createElement('div');
+  $divImageBox.className = 'image-box relative';
+  $divImageCol.appendChild($divImageBox);
   var $recipeImage = document.createElement('img');
   $recipeImage.className = 'image-ingredient-page';
   $recipeImage.setAttribute('src', entry.image);
-  $divImageCol.appendChild($recipeImage);
+  $divImageBox.appendChild($recipeImage);
+  var $divSaveRecipe = document.createElement('div');
+  $divSaveRecipe.className = 'save-recipe';
+  $divSaveRecipe.setAttribute('tempEntryId', entry.tempEntryId);
+  $divImageBox.appendChild($divSaveRecipe);
+  var $saveRecipeIcon = document.createElement('i');
+  $saveRecipeIcon.className = 'fa fa-regular fa-bookmark fa-lg save-recipe-icon';
+  $saveRecipeIcon.setAttribute('ttempEntryId', entry.tempEntryId);
+  $divSaveRecipe.appendChild($saveRecipeIcon);
+  var $saveRecipeText = document.createElement('span');
+  $saveRecipeText.className = 'save-recipe-font';
+  $saveRecipeText.textContent = ' Save Recipe';
+  $saveRecipeText.setAttribute('tempEntryId', entry.tempEntryId);
+  $saveRecipeIcon.appendChild($saveRecipeText);
   var $divIngredientCol = document.createElement('div');
   $divIngredientCol.className = 'col-2-5';
   $divImageIngredient.appendChild($divIngredientCol);
@@ -249,6 +265,7 @@ function GenerateSingleRecipe(entry) {
     $olInstructions.appendChild($liInstructions);
   }
   $divClicked.appendChild($divInstructionCol);
+  $divSaveRecipe.addEventListener('click', saveRecipe);
   return $divClicked;
 }
 
@@ -284,5 +301,26 @@ function logoClick(event) {
 function favoritesClick(event) {
   data.view = 'favorites';
   viewSwap();
+}
 
+function saveRecipe(event) {
+  for (var i = 0; i < data.tempEntries.length; i++) {
+    if (Number(event.target.attributes.tempentryId.value) === data.tempEntries[i].tempEntryId) {
+      var favorite = {
+        name: data.tempEntries[i].name,
+        description: data.tempEntries[i].description,
+        image: data.tempEntries[i].image,
+        recipeIngredients: data.tempEntries[i].recipeIngredients,
+        recipeInstructions: data.tempEntries[i].recipeInstructions,
+        calories: data.tempEntries[i].calories,
+        carbs: data.tempEntries[i].carbs,
+        fats: data.tempEntries[i].fats,
+        protein: data.tempEntries[i].protein,
+        fiber: data.tempEntries[i].fiber,
+        sugar: data.tempEntries[i].sugar,
+        entryId: data.nextEntryId++
+      };
+      data.favorite.unshift(favorite);
+    }
+  }
 }
