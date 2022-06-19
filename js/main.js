@@ -16,6 +16,8 @@ var $homePage = document.querySelector('div[data-view="home-page"]');
 var $singleRecipePage = document.querySelector('div[data-view="recipe-page"]');
 var $resultPage = document.querySelector('div[data-view="results"]');
 var $favoritesPage = document.querySelector('div[data-view="favorites"]');
+
+// Navbar icons
 var $logo = document.querySelector('h1.logo');
 var $favoritesIcon = document.querySelector('i.bookmark');
 
@@ -71,7 +73,6 @@ function parseResponse(apiResponse) {
   for (let i = 0; i < apiResponse.length; i++) {
     if (!apiResponse[i].recipes) {
       var recipe = apiResponse[i];
-      // console.log(recipe);
       var name = recipe.name;
       var description = recipe.description;
       var recipeImage = recipe.thumbnail_url;
@@ -164,7 +165,6 @@ function GenerateSingleRecipe(entry) {
   $pDescript.textContent = entry.description;
   $divTitle.appendChild($pDescript);
   $divClicked.appendChild($div);
-
   var $divServing = document.createElement('div');
   $divServing.className = 'row align-center';
   var $h4Calories = document.createElement('h4');
@@ -216,7 +216,6 @@ function GenerateSingleRecipe(entry) {
   }
   $divServing.appendChild($h4Sugar);
   $divClicked.appendChild($divServing);
-
   var $divImageIngredient = document.createElement('div');
   $divImageIngredient.className = 'row';
   var $divImageCol = document.createElement('div');
@@ -242,7 +241,6 @@ function GenerateSingleRecipe(entry) {
   $saveRecipeText.textContent = ' Save Recipe';
   $saveRecipeText.setAttribute('tempEntryId', entry.tempEntryId);
   $saveRecipeIcon.appendChild($saveRecipeText);
-
   var $divIngredientCol = document.createElement('div');
   $divIngredientCol.className = 'col-2-5';
   $divImageIngredient.appendChild($divIngredientCol);
