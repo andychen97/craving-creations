@@ -19,6 +19,9 @@ var $favoritesPage = document.querySelector('div[data-view="favorites"]');
 var $logo = document.querySelector('h1.logo');
 var $favoritesIcon = document.querySelector('i.bookmark');
 
+// favorite results
+var $favoriteResult = document.querySelector('ul[id="favorite-result"]');
+
 $navSearch.addEventListener('submit', searchCallback);
 $search.addEventListener('submit', searchCallback);
 $logo.addEventListener('click', logoClick);
@@ -126,8 +129,11 @@ function resetSearch() {
   matchCount = 0;
   data.tempEntries = [];
   var $createdLi = document.querySelectorAll('li.li-inline-block');
+
   for (let i = 0; i < $createdLi.length; i++) {
-    $ulSearchResults.removeChild($createdLi[i]);
+    if ($ulSearchResults.hasChildNodes()) {
+      $ulSearchResults.removeChild($createdLi[i]);
+    }
   }
 }
 
@@ -158,6 +164,7 @@ function GenerateSingleRecipe(entry) {
   $pDescript.textContent = entry.description;
   $divTitle.appendChild($pDescript);
   $divClicked.appendChild($div);
+
   var $divServing = document.createElement('div');
   $divServing.className = 'row align-center';
   var $h4Calories = document.createElement('h4');
@@ -209,6 +216,7 @@ function GenerateSingleRecipe(entry) {
   }
   $divServing.appendChild($h4Sugar);
   $divClicked.appendChild($divServing);
+
   var $divImageIngredient = document.createElement('div');
   $divImageIngredient.className = 'row';
   var $divImageCol = document.createElement('div');
@@ -234,6 +242,7 @@ function GenerateSingleRecipe(entry) {
   $saveRecipeText.textContent = ' Save Recipe';
   $saveRecipeText.setAttribute('tempEntryId', entry.tempEntryId);
   $saveRecipeIcon.appendChild($saveRecipeText);
+
   var $divIngredientCol = document.createElement('div');
   $divIngredientCol.className = 'col-2-5';
   $divImageIngredient.appendChild($divIngredientCol);
@@ -281,8 +290,10 @@ function viewSwap() {
     $singleRecipePage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'recipe-page') {
-    $homePage.classList.add('hidden');
     $singleRecipePage.classList.remove('hidden');
+    $homePage.classList.add('hidden');
+    $resultPage.classList.add('hidden');
+    $favoritesPage.classList.add('hidden');
   } else if (data.view === 'favorites') {
     $homePage.classList.remove('hidden');
     $favoritesPage.classList.remove('hidden');
@@ -295,7 +306,6 @@ function logoClick(event) {
   data.view = 'home-page';
   $h4Results.className = 'hidden';
   viewSwap();
-  resetSearch();
 }
 
 function favoritesClick(event) {
@@ -323,4 +333,5 @@ function saveRecipe(event) {
       data.favorite.unshift(favorite);
     }
   }
+  $favoriteResult.prepend(createCards(data.favorite[0]));
 }
