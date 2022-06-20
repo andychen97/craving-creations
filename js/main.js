@@ -16,8 +16,13 @@ var $homePage = document.querySelector('div[data-view="home-page"]');
 var $singleRecipePage = document.querySelector('div[data-view="recipe-page"]');
 var $resultPage = document.querySelector('div[data-view="results"]');
 var $favoritesPage = document.querySelector('div[data-view="favorites"]');
+
+// Navbar icons
 var $logo = document.querySelector('h1.logo');
 var $favoritesIcon = document.querySelector('i.bookmark');
+
+// favorite results
+var $favoriteResult = document.querySelector('ul[id="favorite-result"]');
 
 $navSearch.addEventListener('submit', searchCallback);
 $search.addEventListener('submit', searchCallback);
@@ -68,7 +73,6 @@ function parseResponse(apiResponse) {
   for (let i = 0; i < apiResponse.length; i++) {
     if (!apiResponse[i].recipes) {
       var recipe = apiResponse[i];
-      // console.log(recipe);
       var name = recipe.name;
       var description = recipe.description;
       var recipeImage = recipe.thumbnail_url;
@@ -126,8 +130,11 @@ function resetSearch() {
   matchCount = 0;
   data.tempEntries = [];
   var $createdLi = document.querySelectorAll('li.li-inline-block');
+
   for (let i = 0; i < $createdLi.length; i++) {
-    $ulSearchResults.removeChild($createdLi[i]);
+    if ($ulSearchResults.hasChildNodes()) {
+      $ulSearchResults.removeChild($createdLi[i]);
+    }
   }
 }
 
@@ -281,8 +288,10 @@ function viewSwap() {
     $singleRecipePage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'recipe-page') {
-    $homePage.classList.add('hidden');
     $singleRecipePage.classList.remove('hidden');
+    $homePage.classList.add('hidden');
+    $resultPage.classList.add('hidden');
+    $favoritesPage.classList.add('hidden');
   } else if (data.view === 'favorites') {
     $homePage.classList.remove('hidden');
     $favoritesPage.classList.remove('hidden');
@@ -295,7 +304,6 @@ function logoClick(event) {
   data.view = 'home-page';
   $h4Results.className = 'hidden';
   viewSwap();
-  resetSearch();
 }
 
 function favoritesClick(event) {
@@ -323,4 +331,5 @@ function saveRecipe(event) {
       data.favorite.unshift(favorite);
     }
   }
+  $favoriteResult.prepend(createCards(data.favorite[0]));
 }

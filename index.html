@@ -49,13 +49,17 @@
         <div class="row" data-view="results">
           <div class="col-1">
             <h4 id="results" class="margin-left-20px hidden"><span id="result-count"></span> matched results</h4>
-            <ul class="row ul-search-result" id="ul-search-result">
-            </ul>
+            <ul class="row ul-search-result" id="ul-search-result"></ul>
           </div>
         </div>
       </div>
       <div class="row hidden" data-view="favorites">
-        <h2 id="favorite-title">FAVORITES</h2>
+        <div class="col-1">
+          <h2 id="favorite-title" class="margin-left-20px">FAVORITES</h2>
+        </div>
+        <div class="col-1">
+          <ul class="row ul-search-result" id="favorite-result"></ul>
+        </div>
       </div>
       <div data-view="recipe-page" class="hidden"></div>
     </div>
