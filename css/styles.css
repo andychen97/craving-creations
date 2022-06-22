@@ -9,12 +9,48 @@ main {
   line-height: 1.6;
 }
 
+footer {
+  font-family: Charter, Georgia, Times, serif;
+  color: white;
+  background-color: #222;
+}
+
 .logo {
   font-family: Handlee, cursive;
   font-size: 40px;
   margin: 5px 10px;
   cursor: pointer;
   margin-right: auto;
+}
+
+footer .logo {
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 5px 10px;
+  line-height: 1.5;
+}
+
+footer h3 {
+  margin: 50px 0 20px;
+}
+
+.footer-padding {
+  padding: 20px 0 40px;
+}
+
+.connect-logo {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 10px;
+}
+
+.vertical-nav a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding-bottom: 15px;
 }
 
 .bookmark {
