@@ -25,6 +25,16 @@
   margin-bottom: 20px;
 }
 
+.search-box-layout {
+  max-width: 80%;
+  left: 10%;
+  right: 10%;
+}
+
+.search-input {
+  width: 100%;
+}
+
 .save-recipe {
   bottom: 30px;
   right: 20px;
@@ -93,16 +103,6 @@ footer p,
 
   .hero-font {
     font-size: 60px;
-  }
-
-  .search-box-layout {
-    max-width: 80%;
-    left: 10%;
-    right: 10%;
-  }
-
-  .search-input {
-    width: 100%;
   }
 
   .image-box {
