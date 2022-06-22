@@ -16,6 +16,7 @@ var $homePage = document.querySelector('div[data-view="home-page"]');
 var $singleRecipePage = document.querySelector('div[data-view="recipe-page"]');
 var $resultPage = document.querySelector('div[data-view="results"]');
 var $favoritesPage = document.querySelector('div[data-view="favorites"]');
+var $homePageContent = document.querySelector('div[data-view="home-page-content"]');
 
 // Navbar icons
 var $logo = document.querySelector('h1.logo');
@@ -279,21 +280,25 @@ function GenerateSingleRecipe(entry) {
 function viewSwap() {
   if (data.view === 'home-page') {
     $homePage.classList.remove('hidden');
+    $homePageContent.classList.remove('hidden');
     $singleRecipePage.classList.add('hidden');
     $resultPage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'results') {
     $homePage.classList.remove('hidden');
     $resultPage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $singleRecipePage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'recipe-page') {
     $singleRecipePage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $homePage.classList.add('hidden');
     $resultPage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'favorites') {
     $homePage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $favoritesPage.classList.remove('hidden');
     $singleRecipePage.classList.add('hidden');
     $resultPage.classList.add('hidden');

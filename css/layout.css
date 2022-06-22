@@ -60,6 +60,7 @@
 
 .instructions-list {
   margin: 0 10px;
+  padding-bottom: 30px;
 }
 
 .video {
@@ -261,7 +262,7 @@ footer p,
     }
 
     .instructions-list {
-      margin: 20px;
+      margin: 20px 20px 0;
     }
 
     .video {
