@@ -300,10 +300,16 @@ form.search-box button {
   border-top-left-radius: 40px;
   z-index: 1;
   cursor: pointer;
+  box-shadow: 0 1px #666;
 }
 
 .save-recipe:hover {
   background: rgb(208, 0, 38);
+}
+
+.save-recipe:active {
+  box-shadow: 0 0 #666;
+  transform: translateY(1px);
 }
 
 .save-recipe-icon {

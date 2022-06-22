@@ -333,8 +333,13 @@ function saveRecipe(event) {
         sugar: data.tempEntries[i].sugar,
         entryId: data.nextEntryId++
       };
+      for (var j = 0; j < data.favorite.length; j++) {
+        if (data.favorite[j].name === favorite.name) {
+          return;
+        }
+      }
       data.favorite.unshift(favorite);
+      $favoriteResult.prepend(createCards(data.favorite[0]));
     }
   }
-  $favoriteResult.prepend(createCards(data.favorite[0]));
 }
