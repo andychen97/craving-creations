@@ -235,7 +235,7 @@ function GenerateSingleRecipe(entry) {
   $divImageBox.appendChild($divSaveRecipe);
   var $saveRecipeIcon = document.createElement('i');
   $saveRecipeIcon.className = 'fa fa-regular fa-bookmark fa-lg save-recipe-icon';
-  $saveRecipeIcon.setAttribute('ttempEntryId', entry.tempEntryId);
+  $saveRecipeIcon.setAttribute('tempEntryId', entry.tempEntryId);
   $divSaveRecipe.appendChild($saveRecipeIcon);
   var $saveRecipeText = document.createElement('span');
   $saveRecipeText.className = 'save-recipe-font';
@@ -317,6 +317,7 @@ function favoritesClick(event) {
 }
 
 function saveRecipe(event) {
+  // console.log(event.target);
   for (var i = 0; i < data.tempEntries.length; i++) {
     if (Number(event.target.attributes.tempentryId.value) === data.tempEntries[i].tempEntryId) {
       var favorite = {
@@ -333,6 +334,7 @@ function saveRecipe(event) {
         sugar: data.tempEntries[i].sugar,
         entryId: data.nextEntryId++
       };
+      removeRecipe();
       for (var j = 0; j < data.favorite.length; j++) {
         if (data.favorite[j].name === favorite.name) {
           return;
@@ -342,4 +344,21 @@ function saveRecipe(event) {
       $favoriteResult.prepend(createCards(data.favorite[0]));
     }
   }
+}
+
+function removeRecipe() {
+  // console.log(event);
+  var $li = document.querySelector('li[class="li-inline-block"]');
+  var $removeFromFavorite = document.querySelector('span[class="save-recipe-font"]');
+  $removeFromFavorite.textContent = ' Remove Recipe';
+  var $divRemoveRecipe = document.querySelector('div[class="save-recipe"]');
+  $divRemoveRecipe.addEventListener('click', function (event) {
+    $removeFromFavorite.textContent = ' Save Recipe';
+    for (var i = 0; i < data.favorite.length; i++) {
+      if (Number(event.target.attributes.tempentryId.value) === data.favorite[i].entryId) {
+        data.favorite[i].remove();
+        $favoriteResult.removeChild($li[i]);
+      }
+    }
+  });
 }
