@@ -16,6 +16,7 @@ var $homePage = document.querySelector('div[data-view="home-page"]');
 var $singleRecipePage = document.querySelector('div[data-view="recipe-page"]');
 var $resultPage = document.querySelector('div[data-view="results"]');
 var $favoritesPage = document.querySelector('div[data-view="favorites"]');
+var $homePageContent = document.querySelector('div[data-view="home-page-content"]');
 
 // Navbar icons
 var $logo = document.querySelector('h1.logo');
@@ -63,7 +64,8 @@ function apiSearch(customerInput) {
   });
 
   xhr.open('GET', originalUrl);
-  xhr.setRequestHeader('X-RapidAPI-Key', '0cee8fcae5mshc138c2d6a69e94cp1c0984jsn59f501227ea8');
+  // xhr.setRequestHeader('X-RapidAPI-Key', '0cee8fcae5mshc138c2d6a69e94cp1c0984jsn59f501227ea8');
+  xhr.setRequestHeader('X-RapidAPI-Key', 'a118aca3ffmsh9bff3d0cc99601cp175f42jsn44bf0fc125bc');
   xhr.setRequestHeader('X-RapidAPI-Host', 'tasty.p.rapidapi.com');
 
   xhr.send(data);
@@ -231,15 +233,18 @@ function GenerateSingleRecipe(entry) {
   var $divSaveRecipe = document.createElement('div');
   $divSaveRecipe.className = 'save-recipe';
   $divSaveRecipe.setAttribute('tempEntryId', entry.tempEntryId);
+  // $divSaveRecipe.setAttribute('name', entry.name);
   $divImageBox.appendChild($divSaveRecipe);
   var $saveRecipeIcon = document.createElement('i');
   $saveRecipeIcon.className = 'fa fa-regular fa-bookmark fa-lg save-recipe-icon';
-  $saveRecipeIcon.setAttribute('ttempEntryId', entry.tempEntryId);
+  $saveRecipeIcon.setAttribute('tempEntryId', entry.tempEntryId);
+  // $saveRecipeIcon.setAttribute('name', entry.name);
   $divSaveRecipe.appendChild($saveRecipeIcon);
   var $saveRecipeText = document.createElement('span');
   $saveRecipeText.className = 'save-recipe-font';
   $saveRecipeText.textContent = ' Save Recipe';
   $saveRecipeText.setAttribute('tempEntryId', entry.tempEntryId);
+  // $saveRecipeText.setAttribute('name', entry.name);
   $saveRecipeIcon.appendChild($saveRecipeText);
   var $divIngredientCol = document.createElement('div');
   $divIngredientCol.className = 'col-2-5';
@@ -279,21 +284,25 @@ function GenerateSingleRecipe(entry) {
 function viewSwap() {
   if (data.view === 'home-page') {
     $homePage.classList.remove('hidden');
+    $homePageContent.classList.remove('hidden');
     $singleRecipePage.classList.add('hidden');
     $resultPage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'results') {
     $homePage.classList.remove('hidden');
     $resultPage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $singleRecipePage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'recipe-page') {
     $singleRecipePage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $homePage.classList.add('hidden');
     $resultPage.classList.add('hidden');
     $favoritesPage.classList.add('hidden');
   } else if (data.view === 'favorites') {
     $homePage.classList.remove('hidden');
+    $homePageContent.classList.add('hidden');
     $favoritesPage.classList.remove('hidden');
     $singleRecipePage.classList.add('hidden');
     $resultPage.classList.add('hidden');
@@ -328,8 +337,36 @@ function saveRecipe(event) {
         sugar: data.tempEntries[i].sugar,
         entryId: data.nextEntryId++
       };
+      // removeRecipe();
+      for (var j = 0; j < data.favorite.length; j++) {
+        if (data.favorite[j].name === favorite.name) {
+          return;
+        }
+      }
       data.favorite.unshift(favorite);
+      $favoriteResult.prepend(createCards(data.favorite[0]));
     }
   }
-  $favoriteResult.prepend(createCards(data.favorite[0]));
 }
+
+// function removeRecipe() {
+//   console.log(event);
+//   var $li = document.querySelectorAll('li[class="li-inline-block"]');
+//   console.log($li);
+//   var $removeFromFavorite = document.querySelector('span[class="save-recipe-font"]');
+//   $removeFromFavorite.textContent = ' Remove Recipe';
+//   var $divRemoveRecipe = document.querySelector('div[class="save-recipe"]');
+//   $divRemoveRecipe.addEventListener('click', function (event) {
+//     $removeFromFavorite.textContent = ' Save Recipe';
+//     for (var j = 0; j < $li.length; j++) {
+//       for (var i = 0; i < data.favorite.length; i++) {
+//         if ($li[j].entries.name === data.favorite[j].name) {
+//           $favoriteResult.removeChild($li[j]);
+//         }
+//         if (event.target.attributes.name.value === data.favorite[i].name) {
+//           data.favorite.splice(i, 1);
+//         }
+//       }
+//     }
+//   });
+// }
