@@ -25,6 +25,7 @@ var $favoritesIcon = document.querySelector('i.bookmark');
 // favorite results
 var $favoriteResult = document.querySelector('ul[id="favorite-result"]');
 
+// addEventListenders
 $navSearch.addEventListener('submit', searchCallback);
 $search.addEventListener('submit', searchCallback);
 $logo.addEventListener('click', logoClick);
