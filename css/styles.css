@@ -60,9 +60,7 @@ footer h3 {
 
 .search-container {
   position: relative;
-  display: inline-block;
-  top: 2px;
-  bottom: 10px;
+  margin-top: 2px;
   height: 50px;
   width: 50px;
 }
@@ -81,6 +79,7 @@ footer h3 {
 .expandright {
   left: auto;
   right: 49px;
+  height: 50px;
 }
 
 .mglass {
@@ -90,21 +89,24 @@ footer h3 {
   font-weight: 500;
 }
 
+.margin-right-5 {
+  margin-right: 5px;
+}
+
 .button {
-  display: inline-block;
   height: 50px;
   line-height: 50px;
   text-align: center;
   color: black;
   text-decoration: none;
   cursor: pointer;
+  margin-top: 2px;
 }
 
 .searchbutton {
-  position: absolute;
   font-size: 17px;
   width: 100%;
-  margin: 0;
+  margin-left: 7px;
   padding: 0;
 }
 
