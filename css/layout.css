@@ -20,9 +20,10 @@
 
 .image-box {
   width: 100%;
-  height: 400px;
+  height: 300px;
   padding: 0 20px;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .search-box-layout {
@@ -41,38 +42,91 @@
   width: 40%;
 }
 
-.save-recipe-font {
-  font-size: 20px;
+.save-recipe-icon {
+  left: 20px;
 }
 
+.save-recipe-font {
+  font-size: 16px;
+}
+
+.instructions-title,
 .ingredient-title {
   margin-left: 20px;
+  font-size: 16px;
 }
 
 .ingredient-list {
   margin-left: 40px;
-}
-
-.instructions-title {
-  margin-left: 20px;
-  padding-left: 0;
+  font-size: 14px;
 }
 
 .instructions-list {
   margin: 0 10px;
   padding-bottom: 30px;
+  font-size: 14px;
 }
 
 .video {
-  width: 450px;
+  width: 100%;
   height: 253px;
   border: 0;
+}
+
+.logo {
+  font-family: Handlee, cursive;
+  font-size: 30px;
+  margin: 5px 10px;
+  cursor: pointer;
+  margin-right: auto;
 }
 
 footer .logo,
 footer p,
 .vertical-nav {
   margin-left: 30px;
+}
+
+.hero-font {
+  font-size: 50px;
+}
+
+.h3-text-content {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.p-text-description {
+  line-height: 1.1;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.content-recipe-title {
+  text-align: center;
+  margin: 0 5px;
+  font-size: 18px;
+}
+
+.clicked-title {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.clicked-descript {
+  line-height: 1.1;
+  font-size: 14px;
+}
+
+.serving-facts,
+.serving-facts-last {
+  width: calc(100%/3);
+  font-size: 12px;
+}
+
+.div-title {
+  margin: 5px 10px 0;
 }
 
 @media screen and (min-width: 550px) {
@@ -106,11 +160,36 @@ footer p,
     font-size: 60px;
   }
 
+  .logo {
+    font-family: Handlee, cursive;
+    font-size: 40px;
+    margin: 5px 10px;
+    cursor: pointer;
+    margin-right: auto;
+  }
+
   .image-box {
     width: 100%;
     height: 400px;
     padding: 0 20px;
     margin-bottom: 20px;
+  }
+
+  .h3-text-content {
+    margin: 0 20px;
+    font-size: 20px;
+  }
+
+  .p-text-description {
+    line-height: 1.3;
+    margin: 20px;
+    font-size: 18px;
+  }
+
+  .content-recipe-title {
+    text-align: center;
+    margin: 0 5px;
+    font-size: 20px;
   }
 
   .save-recipe {
@@ -119,31 +198,55 @@ footer p,
     width: 35%;
   }
 
+  .save-recipe-icon {
+    left: 35px;
+  }
+
   .save-recipe-font {
     font-size: 20px;
   }
 
+  .instructions-title,
   .ingredient-title {
     margin-left: 20px;
+    font-size: 18px;
   }
 
   .ingredient-list {
     margin-left: 40px;
-  }
-
-  .instructions-title {
-    margin-left: 20px;
-    padding-left: 0;
+    font-size: 16px;
   }
 
   .instructions-list {
     margin: 0 10px;
+    font-size: 16px;
   }
 
   .video {
     width: 100%;
     height: 338px;
     border: 0;
+  }
+
+  .div-title {
+    margin: 10px 20px 0;
+  }
+
+  .clicked-title {
+    font-size: 26px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .clicked-descript {
+    line-height: 1.3;
+    font-size: 18px;
+  }
+
+  .serving-facts,
+  .serving-facts-last {
+    width: calc(100% / 6);
+    font-size: 14px;
   }
 
   @media screen and (min-width: 768px) {
@@ -201,17 +304,15 @@ footer p,
       font-size: 25px;
     }
 
-    .ingredient-title {
-      margin-left: 50px;
-    }
-
     .ingredient-list {
       margin-left: 90px;
     }
 
+    .ingredient-title,
     .instructions-title {
       margin-left: 50px;
       padding-left: 0;
+      font-size: 24px;
     }
 
     .instructions-list {
@@ -220,8 +321,14 @@ footer p,
 
     .video {
       width: 100%;
-      height: 225px;
+      height: 250px;
       border: 0;
+    }
+
+    .serving-facts,
+    .serving-facts-last {
+      width: calc(100% / 6);
+      font-size: 16px;
     }
   }
 
@@ -256,6 +363,10 @@ footer p,
       margin-left: 0;
     }
 
+    .ingredient-list {
+      font-size: 18px;
+    }
+
     .instructions-title {
       margin: 0 20px;
       padding-left: 0;
@@ -263,6 +374,7 @@ footer p,
 
     .instructions-list {
       margin: 20px 20px 0;
+      font-size: 18px;
     }
 
     .video {

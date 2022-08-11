@@ -64,7 +64,6 @@ function apiSearch(customerInput) {
   });
 
   xhr.open('GET', originalUrl);
-  // xhr.setRequestHeader('X-RapidAPI-Key', '0cee8fcae5mshc138c2d6a69e94cp1c0984jsn59f501227ea8');
   xhr.setRequestHeader('X-RapidAPI-Key', 'a118aca3ffmsh9bff3d0cc99601cp175f42jsn44bf0fc125bc');
   xhr.setRequestHeader('X-RapidAPI-Host', 'tasty.p.rapidapi.com');
 
@@ -158,13 +157,15 @@ function GenerateSingleRecipe(entry) {
   var $div = document.createElement('div');
   $div.className = 'row';
   var $divTitle = document.createElement('div');
-  $divTitle.className = 'col-1 margin-20px';
+  $divTitle.className = 'col-1 div-title';
   $div.appendChild($divTitle);
   var $h2Title = document.createElement('h2');
   $h2Title.textContent = entry.name;
+  $h2Title.className = 'clicked-title';
   $divTitle.appendChild($h2Title);
   var $pDescript = document.createElement('p');
   $pDescript.textContent = entry.description;
+  $pDescript.className = 'clicked-descript';
   $divTitle.appendChild($pDescript);
   $divClicked.appendChild($div);
   var $divServing = document.createElement('div');
@@ -233,24 +234,21 @@ function GenerateSingleRecipe(entry) {
   var $divSaveRecipe = document.createElement('div');
   $divSaveRecipe.className = 'save-recipe';
   $divSaveRecipe.setAttribute('tempEntryId', entry.tempEntryId);
-  // $divSaveRecipe.setAttribute('name', entry.name);
   $divImageBox.appendChild($divSaveRecipe);
   var $saveRecipeIcon = document.createElement('i');
   $saveRecipeIcon.className = 'fa fa-regular fa-bookmark fa-lg save-recipe-icon';
   $saveRecipeIcon.setAttribute('tempEntryId', entry.tempEntryId);
-  // $saveRecipeIcon.setAttribute('name', entry.name);
   $divSaveRecipe.appendChild($saveRecipeIcon);
   var $saveRecipeText = document.createElement('span');
   $saveRecipeText.className = 'save-recipe-font';
   $saveRecipeText.textContent = ' Save Recipe';
   $saveRecipeText.setAttribute('tempEntryId', entry.tempEntryId);
-  // $saveRecipeText.setAttribute('name', entry.name);
   $saveRecipeIcon.appendChild($saveRecipeText);
   var $divIngredientCol = document.createElement('div');
   $divIngredientCol.className = 'col-2-5';
   $divImageIngredient.appendChild($divIngredientCol);
   var $h4IngredientTitle = document.createElement('h4');
-  $h4IngredientTitle.textContent = 'INGREDIENTS';
+  $h4IngredientTitle.textContent = 'Ingredients';
   $h4IngredientTitle.className = 'ingredient-title';
   $divIngredientCol.appendChild($h4IngredientTitle);
   var $ulIngredients = document.createElement('ul');
@@ -266,7 +264,7 @@ function GenerateSingleRecipe(entry) {
   $divInstructionCol.className = 'col-1';
   var $h4InstructionTitle = document.createElement('h4');
   $h4InstructionTitle.className = 'instructions-title';
-  $h4InstructionTitle.textContent = 'INSTRUCTIONS';
+  $h4InstructionTitle.textContent = 'Instructions';
   $divInstructionCol.appendChild($h4InstructionTitle);
   var $olInstructions = document.createElement('ol');
   $olInstructions.className = 'instructions-list';
@@ -337,7 +335,6 @@ function saveRecipe(event) {
         sugar: data.tempEntries[i].sugar,
         entryId: data.nextEntryId++
       };
-      // removeRecipe();
       for (var j = 0; j < data.favorite.length; j++) {
         if (data.favorite[j].name === favorite.name) {
           return;
@@ -348,25 +345,3 @@ function saveRecipe(event) {
     }
   }
 }
-
-// function removeRecipe() {
-//   console.log(event);
-//   var $li = document.querySelectorAll('li[class="li-inline-block"]');
-//   console.log($li);
-//   var $removeFromFavorite = document.querySelector('span[class="save-recipe-font"]');
-//   $removeFromFavorite.textContent = ' Remove Recipe';
-//   var $divRemoveRecipe = document.querySelector('div[class="save-recipe"]');
-//   $divRemoveRecipe.addEventListener('click', function (event) {
-//     $removeFromFavorite.textContent = ' Save Recipe';
-//     for (var j = 0; j < $li.length; j++) {
-//       for (var i = 0; i < data.favorite.length; i++) {
-//         if ($li[j].entries.name === data.favorite[j].name) {
-//           $favoriteResult.removeChild($li[j]);
-//         }
-//         if (event.target.attributes.name.value === data.favorite[i].name) {
-//           data.favorite.splice(i, 1);
-//         }
-//       }
-//     }
-//   });
-// }
