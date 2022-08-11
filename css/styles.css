@@ -27,6 +27,14 @@ footer h3 {
   margin: 50px 0 20px;
 }
 
+.logo-col8-10 {
+  flex-basis: 80%;
+}
+
+.logo-col2-10 {
+  flex-basis: 20%;
+}
+
 .footer-padding {
   padding: 20px 0 40px;
 }
@@ -45,6 +53,7 @@ footer h3 {
 }
 
 .bookmark {
+  padding-top: 25px;
   margin-right: 5px;
   cursor: pointer;
 }
@@ -109,8 +118,16 @@ footer h3 {
   text-align: center;
 }
 
+.text-align-right {
+  text-align: end;
+}
+
 .align-center {
   justify-content: center;
+}
+
+.align-right {
+  justify-content: flex-end;
 }
 
 .align-vertical-center {

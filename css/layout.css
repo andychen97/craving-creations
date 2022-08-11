@@ -78,7 +78,6 @@
   font-size: 30px;
   margin: 5px 10px;
   cursor: pointer;
-  margin-right: auto;
 }
 
 footer .logo,
@@ -165,7 +164,6 @@ footer p,
     font-size: 40px;
     margin: 5px 10px;
     cursor: pointer;
-    margin-right: auto;
   }
 
   .image-box {
