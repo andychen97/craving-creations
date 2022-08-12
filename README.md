@@ -6,12 +6,12 @@ I wanted to build this project to test my coding skills. Prior to starting the p
 
 Check out my project! https://andychen97.github.io/ajax-project/
 
-## ⚡Technologies
+## Technologies
 - HTML
 - CSS
 - JavaScript
 - AJAX
-- APIs (XHR) 
+- APIs (XHR) https://rapidapi.com/apidojo/api/tasty
 
 ## Features
 1. Users can search through Tasty's API using keywords
