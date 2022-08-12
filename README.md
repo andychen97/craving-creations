@@ -11,7 +11,7 @@ Check out my project! https://andychen97.github.io/ajax-project/
 - CSS
 - JavaScript
 - AJAX
-- APIs (XHR) https://rapidapi.com/apidojo/api/tasty
+- APIs (XMLHttpRequest/XHR) https://rapidapi.com/apidojo/api/tasty
 
 ## Features
 1. Users can search through Tasty's API using keywords
