@@ -29,5 +29,10 @@ https://user-images.githubusercontent.com/100327736/184412691-fa04a423-5ad9-4858
 3. Users can add view their favorite in their account
 
 ## System Requirement
-1. A code editor
+1. Code Editor (Recommended: VS Code)
+2. Live Reload Server
+
+## Getting Started
+1. Clone my repo and have fun editing!
+- No further instructions needed.
 
